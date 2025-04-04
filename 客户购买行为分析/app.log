@@ -1,0 +1,53 @@
+2025-03-29 23:56:55,900 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.6:5001
+2025-03-29 23:56:55,900 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-29 23:56:57,280 - INFO - 192.168.1.6 - - [29/Mar/2025 23:56:57] "GET / HTTP/1.1" 200 -
+2025-03-29 23:56:57,391 - INFO - 192.168.1.6 - - [29/Mar/2025 23:56:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-29 23:57:22,697 - ERROR - 处理失败:
+Traceback (most recent call last):
+  File "/Users/suwei/Desktop/python/客户购买行为分析/app.py", line 167, in analyze
+    engine = AnalysisEngine(params).process_data(
+        main_file=request.files.get('main_file'),
+        product_file=request.files.get('product_file'),
+        customer_file=request.files.get('customer_file')
+    )
+  File "/Users/suwei/Desktop/python/客户购买行为分析/app.py", line 91, in process_data
+    customer_df = self.validate_file(customer_file, 'customer')
+  File "/Users/suwei/Desktop/python/客户购买行为分析/app.py", line 72, in validate_file
+    raise ValueError(f"{file_type}文件缺少必要列：{', '.join(missing)}")
+ValueError: customer文件缺少必要列：客户名称
+
+2025-03-29 23:57:22,701 - INFO - 192.168.1.6 - - [29/Mar/2025 23:57:22] "POST / HTTP/1.1" 200 -
+2025-03-30 00:01:35,462 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.6:5001
+2025-03-30 00:01:35,462 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 00:01:37,488 - INFO - 192.168.1.6 - - [30/Mar/2025 00:01:37] "GET / HTTP/1.1" 200 -
+2025-03-30 00:01:37,567 - INFO - 192.168.1.6 - - [30/Mar/2025 00:01:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 00:01:59,205 - INFO - 192.168.1.6 - - [30/Mar/2025 00:01:59] "POST / HTTP/1.1" 200 -
+2025-03-30 00:09:04,337 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.6:5001
+2025-03-30 00:09:04,337 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 00:09:06,070 - INFO - 192.168.1.6 - - [30/Mar/2025 00:09:06] "GET / HTTP/1.1" 200 -
+2025-03-30 00:09:06,146 - INFO - 192.168.1.6 - - [30/Mar/2025 00:09:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 00:09:22,217 - INFO - 192.168.1.6 - - [30/Mar/2025 00:09:22] "POST / HTTP/1.1" 200 -
+2025-03-30 00:14:54,957 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.6:5001
+2025-03-30 00:14:54,958 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 00:14:56,758 - INFO - 192.168.1.6 - - [30/Mar/2025 00:14:56] "GET / HTTP/1.1" 200 -
+2025-03-30 00:14:56,832 - INFO - 192.168.1.6 - - [30/Mar/2025 00:14:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-30 00:15:17,231 - INFO - 192.168.1.6 - - [30/Mar/2025 00:15:17] "POST / HTTP/1.1" 200 -
+2025-03-30 00:15:37,329 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.6:5001
+2025-03-30 00:15:37,329 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 00:15:43,950 - INFO - 192.168.1.6 - - [30/Mar/2025 00:15:43] "GET / HTTP/1.1" 200 -
+2025-03-30 00:16:54,386 - INFO - 192.168.1.6 - - [30/Mar/2025 00:16:54] "POST / HTTP/1.1" 200 -
