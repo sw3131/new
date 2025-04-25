@@ -51,3 +51,126 @@ ValueError: customer文件缺少必要列：客户名称
 2025-03-30 00:15:37,329 - INFO - [33mPress CTRL+C to quit[0m
 2025-03-30 00:15:43,950 - INFO - 192.168.1.6 - - [30/Mar/2025 00:15:43] "GET / HTTP/1.1" 200 -
 2025-03-30 00:16:54,386 - INFO - 192.168.1.6 - - [30/Mar/2025 00:16:54] "POST / HTTP/1.1" 200 -
+2025-04-25 13:36:48,583 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.16.113.183:5001
+2025-04-25 13:36:48,584 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-25 13:36:50,366 - INFO - 172.16.113.183 - - [25/Apr/2025 13:36:50] "GET / HTTP/1.1" 200 -
+2025-04-25 13:36:57,629 - INFO - 172.16.113.183 - - [25/Apr/2025 13:36:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-25 13:37:29,469 - ERROR - 文件读取失败: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-04-25 13:37:29,474 - ERROR - 处理失败:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'openpyxl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 61, in validate_file
+    df = pd.read_excel(file_stream)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_base.py", line 495, in read_excel
+    io = ExcelFile(
+        io,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_base.py", line 1567, in __init__
+    self._reader = self._engines[engine](
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        self._io,
+        ^^^^^^^^^
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_openpyxl.py", line 552, in __init__
+    import_optional_dependency("openpyxl")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/compat/_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 167, in analyze
+    engine = AnalysisEngine(params).process_data(
+        main_file=request.files.get('main_file'),
+        product_file=request.files.get('product_file'),
+        customer_file=request.files.get('customer_file')
+    )
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 80, in process_data
+    main_df = self.validate_file(main_file, 'main')
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 66, in validate_file
+    raise ValueError("文件解析失败，请检查文件格式")
+ValueError: 文件解析失败，请检查文件格式
+
+2025-04-25 13:37:29,476 - INFO - 172.16.113.183 - - [25/Apr/2025 13:37:29] "POST / HTTP/1.1" 200 -
+2025-04-25 13:38:13,979 - ERROR - 文件读取失败: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-04-25 13:38:13,980 - ERROR - 处理失败:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'openpyxl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 61, in validate_file
+    df = pd.read_excel(file_stream)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_base.py", line 495, in read_excel
+    io = ExcelFile(
+        io,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_base.py", line 1567, in __init__
+    self._reader = self._engines[engine](
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        self._io,
+        ^^^^^^^^^
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/excel/_openpyxl.py", line 552, in __init__
+    import_optional_dependency("openpyxl")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/compat/_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 167, in analyze
+    engine = AnalysisEngine(params).process_data(
+        main_file=request.files.get('main_file'),
+        product_file=request.files.get('product_file'),
+        customer_file=request.files.get('customer_file')
+    )
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 80, in process_data
+    main_df = self.validate_file(main_file, 'main')
+  File "/Users/suwei/Desktop/python/new仓/new/客户购买行为分析/app.py", line 66, in validate_file
+    raise ValueError("文件解析失败，请检查文件格式")
+ValueError: 文件解析失败，请检查文件格式
+
+2025-04-25 13:38:13,982 - INFO - 172.16.113.183 - - [25/Apr/2025 13:38:13] "POST / HTTP/1.1" 200 -
